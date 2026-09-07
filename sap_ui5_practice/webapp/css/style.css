@@ -11,3 +11,7 @@ html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
     font-weight: bold;
  }
  
+ .myPage .sapMBarMiddle .sapMTitle {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
