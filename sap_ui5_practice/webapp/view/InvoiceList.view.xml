@@ -4,7 +4,7 @@
    xmlns:mvc="sap.ui.core.mvc">
    <List
       headerText="{i18n>invoiceListTitle}"
-      class="sapUiResponsiveMargin harsh"
+      class="sapUiResponsiveMargin"
       width="auto"
       items="{invoice>/Invoices}" >
       <items >

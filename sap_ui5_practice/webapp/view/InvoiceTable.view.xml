@@ -6,7 +6,8 @@
         id="invoiceTable"
         items="{invoice>/Invoices}"
         class="sapUiResponsiveMargin"
-        width="auto">
+        width="auto"
+        headerText="{i18n>invoiceTableTitle}">
 
         <headerToolbar>
             <Toolbar>
@@ -39,11 +40,9 @@
             <Column>
                 <Text text="Status"/>
             </Column>
-
         </columns>
-
         <items>
-            <ColumnListItem>
+            <ColumnListItem class="harsh1">
                 <cells>
                     <Text text="{invoice>ProductName}"/>
                     <Text text="{invoice>Quantity}"/>
