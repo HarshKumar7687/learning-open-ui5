@@ -6,8 +6,7 @@
         id="invoiceTable"
         items="{invoice>/Invoices}"
         class="sapUiResponsiveMargin"
-        width="auto"
-        headerText="{i18n>invoiceTableTitle}">
+        width="auto">
 
         <headerToolbar>
             <Toolbar>
