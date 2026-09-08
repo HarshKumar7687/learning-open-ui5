@@ -38,23 +38,27 @@
         "id": "app"
       },
       "models": {
-        "i18n": {
-          "type": "sap.ui.model.resource.ResourceModel",
-          "settings": {
-            "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
-            "supportedLocales": [
-              ""
-            ],
-            "fallbackLocale": ""
-          }
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
+          "supportedLocales": [
+            ""
+          ],
+          "fallbackLocale": ""
         }
       },
-      "resources": {
+      "invoice": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/localInvoices.json"
+      }
+    },
+    "resources": {
       "css": [
         {
-        "uri": "css/style.css"
+          "uri": "css/style.css"
         }
       ]
-    }     
     }
   }
+}  

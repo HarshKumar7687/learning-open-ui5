@@ -4,30 +4,13 @@
   xmlns:mvc="sap.ui.core.mvc"
   xmlns:form="sap.ui.layout.form"
   displayBlock="true">
-  <Shell>
-    <App class="myAppDemoWT">
+  
+    <App class="myAppDemoWT" id="app">
       <pages>
-        <Page title="{i18n>homePageTitle}" titleAlignment="Center">
+        <Page id="page1" title="{i18n>homePageTitle}" titleAlignment="Center">
           <content>
-            <Panel
-              headerText="{i18n>helloPanelTitle}"
-              class="sapUiResponsiveMargin"
-              width="auto">
-              <content>
-                <Button
-                  text="{i18n>showHelloButtonText}"
-                  press=".onShowHello"
-                  type = "Emphasized"
-                  class="myCustomButton sapUiSmallMarginEnd"/>
-                <Input
-                  value="{/recipient/name}"
-                  valueLiveUpdate="true"
-                  width="60%"/>
-                <FormattedText
-                  htmlText="Hello {/recipient/name}"
-                  class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>	
-              </content>
-            </Panel>
+           <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.HelloPanel"/>
+           
             <Panel expandable="true" width="auto" class="sapUiResponsiveMargin">
               <headerToolbar>
                 <OverflowToolbar style="Clear">
@@ -44,14 +27,14 @@
                       <Input
                         value="{Named>/named/name}" 
                         width="80%"/>
-                      <Button text="Show Name" press=".onShowNamedFormName" width="25%"/>
+                      <Button text="Show Name" press=".onShowNamedFormName" width="25%" type = "Critical"/>
                       <Label text="Marks"/>
                       <Input
                         value="{Named>/named/marks}"
                         description="Marks: {Named>/named/marks}"
                         valueLiveUpdate="true"
                         width="80%"/>                     
-                      <Button text="Show Marks" press=".onShowNamedFormMarks" width="25%"/>
+                      <Button text="Show Marks" press=".onShowNamedFormMarks" width="25%" type = "Neutral"/>
 
                       <Label text="Age"/>
                       <Input
@@ -59,7 +42,7 @@
                         description="Age: {Named>/named/age}"
                         valueLiveUpdate="true"
                         width="80%"/>
-                      <Button text="Show Age" press=".onShowNamedFormAge" width="25%"/>
+                      <Button text="Show Age" press=".onShowNamedFormAge" width="25%" type = "Negative"/>
 
                   </form:SimpleForm>
 			        </content>
@@ -80,14 +63,14 @@
                         value="{/unnamed/name}"
                         valueLiveUpdate="true"
                         width="60%"/>
-                      <Button text="Show Name" press=".onShowUnnamedFormName" width="25%"/>
+                      <Button text="Show Name" press=".onShowUnnamedFormName" width="25%" type = "Critical"/>
                       <Label text="Marks"/>
                       <Input
                         value="{/unnamed/marks}"
                         description="Marks: {/unnamed/marks}"
                         valueLiveUpdate="true"
                         width="60%"/>
-                        <Button text="Show Marks" press=".onShowUnnamedFormMarks" width="25%"/>
+                        <Button text="Show Marks" press=".onShowUnnamedFormMarks" width="25%" type = "Neutral"/>
 
                       <Label text="Age"/>
                       <Input
@@ -95,14 +78,21 @@
                         description="Age: {/unnamed/age}"
                         valueLiveUpdate="true"
                         width="60%"/>
-                      <Button text="Show Age" press=".onShowUnnamedFormAge" width="25%"/>
+                      <Button text="Show Age" press=".onShowUnnamedFormAge" width="25%" type = "Negative"/>
 
                   </form:SimpleForm>
 			        </content>
 	          </Panel>
           </content>
-        </Page>
+          <Button text="Go to Page 2" press=".onNavigateToPage2" class="sapUiMediumMarginBegin"/>
+      </Page>
+        <Page id="page2" title="{i18n>homePageTitle2}" titleAlignment="Center" backgroundDesign="List" class="myPageWithBgImage">
+            <content>
+              <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.InvoiceList"/>
+              <Button text="Back" press=".onNavigateBack" class="sapUiMediumMarginBegin"/>
+            </content >
+      </Page>
       </pages>
     </App>
-  </Shell>
+
 </mvc:View>

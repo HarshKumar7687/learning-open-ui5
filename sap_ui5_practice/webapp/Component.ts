@@ -1,6 +1,5 @@
 import UIComponent from "sap/ui/core/UIComponent";
 import JSONModel from "sap/ui/model/json/JSONModel";
-import ResourceModel from "sap/ui/model/resource/ResourceModel";
 
 /**
  * @namespace ui5.tutorial.walkthrough
