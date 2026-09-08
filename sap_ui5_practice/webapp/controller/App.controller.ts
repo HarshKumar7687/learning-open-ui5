@@ -56,6 +56,10 @@ export default class AppController extends BaseController {
         const app = this.byId("app") as App;
         app.to(this.createId("page2"));
     }
+	public onNavigateToPage3(): void {
+        const app = this.byId("app") as App;
+        app.to(this.createId("page3"));
+    }
 
     public onNavigateBack(): void {
         const app = this.byId("app") as App;

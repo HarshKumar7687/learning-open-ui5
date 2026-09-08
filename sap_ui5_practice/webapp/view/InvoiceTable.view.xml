@@ -1,0 +1,60 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Table
+        id="invoiceTable"
+        items="{invoice>/Invoices}"
+        class="sapUiResponsiveMargin"
+        width="auto">
+
+        <headerToolbar>
+            <Toolbar>
+                <Title text="Invoice Details"/>
+            </Toolbar>
+        </headerToolbar>
+
+        <columns>
+
+            <Column>
+                <Text text="Product Name"/>
+            </Column>
+
+            <Column>
+                <Text text="Quantity"/>
+            </Column>
+
+            <Column>
+                <Text text="Extended Price"/>
+            </Column>
+
+            <Column>
+                <Text text="Shipper Name"/>
+            </Column>
+
+            <Column>
+                <Text text="Shipped Date"/>
+            </Column>
+
+            <Column>
+                <Text text="Status"/>
+            </Column>
+
+        </columns>
+
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{invoice>ProductName}"/>
+                    <Text text="{invoice>Quantity}"/>
+                    <Text text="{invoice>ExtendedPrice}"/>
+                    <Text text="{invoice>ShipperName}"/>
+                    <Text text="{invoice>ShippedDate}"/>
+                    <Text text="{invoice>Status}"/>
+                </cells>
+            </ColumnListItem>
+        </items>
+
+    </Table>
+
+</mvc:View>

@@ -92,7 +92,18 @@
             <content>
               <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.InvoiceList"/>
               <Button text="Back" press=".onNavigateBack" class="sapUiMediumMarginBegin"/>
+              <Button text="Go to Page 3" press=".onNavigateToPage3" class="sapUiMediumMarginBegin"/>
             </content >
+      </Page>
+      <Page id="page3" title="Invoice Table" titleAlignment="Center">
+        <content>
+        <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.InvoiceTable"/>
+        
+        <Button
+            text="Back"
+            press=".onNavigateBack"
+            class="sapUiMediumMarginBegin"/>
+        </content>
       </Page>
       </pages>
     </App>
