@@ -35,3 +35,8 @@ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
    opacity: 1;
   color: black;
 }
+.heroBackground {
+   background-color: gray;
+   padding: 1rem;
+   border-radius: 0.5rem;
+}

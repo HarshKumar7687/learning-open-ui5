@@ -4,10 +4,6 @@
 
     <VBox width="100%">
 
-        <!-- ================================= -->
-        <!-- TOP RIGHT BUTTONS                 -->
-        <!-- ================================= -->
-
         <HBox
             width="100%"
             justifyContent="End"
@@ -32,27 +28,17 @@
 
         </HBox>
 
-
-        <!-- ================================= -->
-        <!-- PROFILE HEADER                    -->
-        <!-- ================================= -->
-
         <VBox
             class="sapUiSmallMarginBegin sapUiSmallMarginTop">
 
             <!-- NAME -->
             <Title
-                text="Denise Smith"
+                text="Spider-man"
                 level="H2"/>
 
             <Text
-                text="Senior UI Developer"
+                text="Peter Parker"
                 class="sapUiTinyMarginTop"/>
-
-
-            <!-- ================================= -->
-            <!-- PROFILE INFORMATION               -->
-            <!-- ================================= -->
 
             <HBox
                 alignItems="Center"
@@ -67,12 +53,6 @@
                     decorative="false"
                     alt="Denise Smith"
                     class="sapUiMediumMarginEnd"/>
-
-
-                <!-- ================================= -->
-                <!-- PHONE + EMAIL                     -->
-                <!-- ================================= -->
-
                 <VBox
                     class="sapUiMediumMarginEnd">
 
@@ -80,15 +60,10 @@
                         text="+33 6 4512 5158"/>
 
                     <Link
-                        text="DeniseSmith@sap.com"
+                        text="PeterParker@sap.com"
                         class="sapUiTinyMarginTop"/>
 
                 </VBox>
-
-
-                <!-- ================================= -->
-                <!-- SOCIAL ICONS                      -->
-                <!-- ================================= -->
 
                 <HBox
                     alignItems="Center"
@@ -96,28 +71,23 @@
 
                     <!-- LinkedIn -->
                     <Button
-                        text="in"
+                        icon="sap-icon://broken-link"
                         type="Transparent"
                         tooltip="LinkedIn"/>
 
                     <!-- Twitter -->
                     <Button
-                        text="♥"
+                        icon="sap-icon://Netweaver-business-client"
                         type="Transparent"
                         tooltip="Twitter"/>
 
                 </HBox>
 
-
-                <!-- ================================= -->
-                <!-- ABOUT + PROGRESS                  -->
-                <!-- ================================= -->
-
                 <VBox
                     class="sapUiMediumMarginEnd">
 
                     <Text
-                        text="Hello! I am Denise and I use UxAP"/>
+                        text="Hello! I am Peter and I use my webs"/>
 
                     <Text
                         text="Achieved goals"
@@ -131,21 +101,10 @@
 
                 </VBox>
 
-
-                <!-- ================================= -->
-                <!-- LOCATION                          -->
-                <!-- ================================= -->
-
                 <Text
-                    text="San Jose, USA"/>
+                    text="New York, USA"/>
 
             </HBox>
-
-
-            <!-- ================================= -->
-            <!-- UP + PIN BUTTONS                  -->
-            <!-- ================================= -->
-
             <HBox
                 justifyContent="Center"
                 class="sapUiTinyMarginTop">
@@ -163,11 +122,6 @@
             </HBox>
 
         </VBox>
-
-
-        <!-- ================================= -->
-        <!-- NAVIGATION TABS                  -->
-        <!-- ================================= -->
 
         <HBox
             alignItems="Center"
@@ -217,19 +171,8 @@
 
         </HBox>
 
-
-        <!-- ================================= -->
-        <!-- GOALS                             -->
-        <!-- ================================= -->
-
         <VBox
-            class="sapUiMediumMargin">
-
-
-            <!-- ================================= -->
-            <!-- FIRST GOAL ROW                    -->
-            <!-- ================================= -->
-
+            class="sapUiMediumMargin heroBackground">
             <HBox>
 
                 <!-- LEFT GOAL -->
@@ -259,11 +202,6 @@
 
             </HBox>
 
-
-            <!-- ================================= -->
-            <!-- SECOND GOAL                       -->
-            <!-- ================================= -->
-
             <VBox
                 class="sapUiMediumMarginTop">
 
@@ -277,11 +215,6 @@
             </VBox>
 
         </VBox>
-
-
-        <!-- ================================= -->
-        <!-- PERSONAL                          -->
-        <!-- ================================= -->
 
         <Title
             text="PERSONAL"
