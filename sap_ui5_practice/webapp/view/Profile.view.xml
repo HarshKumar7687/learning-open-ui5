@@ -1,17 +1,293 @@
 <mvc:View
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Panel
-    headerText="Spider-man"
-    class="sapUiResponsiveMargin"
-    width="auto" >
-    <content>
-        <Image
-            src="assets/spiderman.jpg"
-            width="100px"
-            height="100px"
-            decorative="true"
-            alt="Sample Image" />
-    </content>
-    </Panel>    
+
+    <VBox width="100%">
+
+        <!-- ================================= -->
+        <!-- TOP RIGHT BUTTONS                 -->
+        <!-- ================================= -->
+
+        <HBox
+            width="100%"
+            justifyContent="End"
+            class="sapUiTinyMarginTop sapUiSmallMarginEnd">
+
+            <!-- Download -->
+            <Button
+                icon="sap-icon://download"
+                type="Emphasized"
+                tooltip="Download"/>
+
+            <!-- Eye -->
+            <Button
+                icon="sap-icon://show"
+                type="Transparent"
+                tooltip="View"/>
+
+            <!-- Toggle Footer -->
+            <Button
+                text="Toggle Footer"
+                type="Transparent"/>
+
+        </HBox>
+
+
+        <!-- ================================= -->
+        <!-- PROFILE HEADER                    -->
+        <!-- ================================= -->
+
+        <VBox
+            class="sapUiSmallMarginBegin sapUiSmallMarginTop">
+
+            <!-- NAME -->
+            <Title
+                text="Denise Smith"
+                level="H2"/>
+
+            <Text
+                text="Senior UI Developer"
+                class="sapUiTinyMarginTop"/>
+
+
+            <!-- ================================= -->
+            <!-- PROFILE INFORMATION               -->
+            <!-- ================================= -->
+
+            <HBox
+                alignItems="Center"
+                class="sapUiMediumMarginTop">
+
+
+                <!-- PROFILE IMAGE -->
+                <Image
+                    src="assets/spiderman.jpg"
+                    width="80px"
+                    height="80px"
+                    decorative="false"
+                    alt="Denise Smith"
+                    class="sapUiMediumMarginEnd"/>
+
+
+                <!-- ================================= -->
+                <!-- PHONE + EMAIL                     -->
+                <!-- ================================= -->
+
+                <VBox
+                    class="sapUiMediumMarginEnd">
+
+                    <Link
+                        text="+33 6 4512 5158"/>
+
+                    <Link
+                        text="DeniseSmith@sap.com"
+                        class="sapUiTinyMarginTop"/>
+
+                </VBox>
+
+
+                <!-- ================================= -->
+                <!-- SOCIAL ICONS                      -->
+                <!-- ================================= -->
+
+                <HBox
+                    alignItems="Center"
+                    class="sapUiMediumMarginEnd">
+
+                    <!-- LinkedIn -->
+                    <Button
+                        text="in"
+                        type="Transparent"
+                        tooltip="LinkedIn"/>
+
+                    <!-- Twitter -->
+                    <Button
+                        text="♥"
+                        type="Transparent"
+                        tooltip="Twitter"/>
+
+                </HBox>
+
+
+                <!-- ================================= -->
+                <!-- ABOUT + PROGRESS                  -->
+                <!-- ================================= -->
+
+                <VBox
+                    class="sapUiMediumMarginEnd">
+
+                    <Text
+                        text="Hello! I am Denise and I use UxAP"/>
+
+                    <Text
+                        text="Achieved goals"
+                        class="sapUiTinyMarginTop"/>
+
+                    <ProgressIndicator
+                        percentValue="30"
+                        displayValue="30%"
+                        width="212px"
+                        class="sapUiTinyMarginTop"/>
+
+                </VBox>
+
+
+                <!-- ================================= -->
+                <!-- LOCATION                          -->
+                <!-- ================================= -->
+
+                <Text
+                    text="San Jose, USA"/>
+
+            </HBox>
+
+
+            <!-- ================================= -->
+            <!-- UP + PIN BUTTONS                  -->
+            <!-- ================================= -->
+
+            <HBox
+                justifyContent="Center"
+                class="sapUiTinyMarginTop">
+
+                <Button
+                    icon="sap-icon://slim-arrow-up"
+                    type="Transparent"
+                    tooltip="Collapse"/>
+
+                <Button
+                    icon="sap-icon://pushpin-on"
+                    type="Transparent"
+                    tooltip="Pin"/>
+
+            </HBox>
+
+        </VBox>
+
+
+        <!-- ================================= -->
+        <!-- NAVIGATION TABS                  -->
+        <!-- ================================= -->
+
+        <HBox
+            alignItems="Center"
+            class="sapUiSmallMarginTop">
+
+
+            <!-- 2014 GOALS PLAN -->
+            <Button
+                text="2014 GOALS PLAN"
+                type="Transparent"
+                class="sapUiMediumMarginBegin"/>
+
+
+            <!-- PERSONAL -->
+            <Button
+                text="PERSONAL"
+                type="Transparent"
+                class="sapUiSmallMarginBegin"/>
+
+
+            <!-- EMPLOYMENT -->
+            <MenuButton
+                text="EMPLOYMENT"
+                icon="sap-icon://slim-arrow-down"
+                iconFirst="false"
+                type="Transparent"
+                class="sapUiSmallMarginBegin">
+
+                <menu>
+
+                    <Menu>
+
+                        <MenuItem
+                            text="Job information"/>
+
+                        <MenuItem
+                            text="Employee Details"/>
+
+                        <MenuItem
+                            text="Job Relationship"/>
+
+                    </Menu>
+
+                </menu>
+
+            </MenuButton>
+
+        </HBox>
+
+
+        <!-- ================================= -->
+        <!-- GOALS                             -->
+        <!-- ================================= -->
+
+        <VBox
+            class="sapUiMediumMargin">
+
+
+            <!-- ================================= -->
+            <!-- FIRST GOAL ROW                    -->
+            <!-- ================================= -->
+
+            <HBox>
+
+                <!-- LEFT GOAL -->
+                <VBox width="50%">
+
+                    <Text
+                        text="Evangelize the UI framework across the organization"
+                        class="sapUiTinyMarginBottom"/>
+
+                    <Text
+                        text="4 days overdue Cascaded"/>
+
+                </VBox>
+
+
+                <!-- RIGHT GOAL -->
+                <VBox width="50%">
+
+                    <Text
+                        text="Mentor junior developers:"
+                        class="sapUiTinyMarginBottom"/>
+
+                    <Text
+                        text="Due Dec 31 Cascaded"/>
+
+                </VBox>
+
+            </HBox>
+
+
+            <!-- ================================= -->
+            <!-- SECOND GOAL                       -->
+            <!-- ================================= -->
+
+            <VBox
+                class="sapUiMediumMarginTop">
+
+                <Text
+                    text="Get trained in development management direction"
+                    class="sapUiTinyMarginBottom"/>
+
+                <Text
+                    text="Due Nov 21"/>
+
+            </VBox>
+
+        </VBox>
+
+
+        <!-- ================================= -->
+        <!-- PERSONAL                          -->
+        <!-- ================================= -->
+
+        <Title
+            text="PERSONAL"
+            level="H3"
+            class="sapUiMediumMarginBegin"/>
+
+    </VBox>
+
 </mvc:View>
