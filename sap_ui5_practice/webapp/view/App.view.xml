@@ -11,99 +11,30 @@
         <Page id="page1" title="{i18n>homePageTitle}" titleAlignment="Center">
           <content>
            <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.HelloPanel"/>
-           
-            <Panel expandable="true" width="auto" class="sapUiResponsiveMargin">
-              <headerToolbar>
-                <OverflowToolbar style="Clear">
-                  <Title text="Named Form" />
-                  
-                </OverflowToolbar>
-              </headerToolbar>
-		          <content>
-                  <Text text="This is a named form" />
-                  <form:SimpleForm
-                      editable="true">
-                      <!-- <Title text="Named Form"/> -->
-                      <Label text="Name"/>
-                      <Input
-                        value="{Named>/named/name}" 
-                        width="80%"/>
-                      <Button text="Show Name" press=".onShowNamedFormName" width="25%" type = "Critical"/>
-                      <Label text="Marks"/>
-                      <Input
-                        value="{Named>/named/marks}"
-                        description="Marks: {Named>/named/marks}"
-                        valueLiveUpdate="true"
-                        width="80%"/>                     
-                      <Button text="Show Marks" press=".onShowNamedFormMarks" width="25%" type = "Neutral"/>
-
-                      <Label text="Age"/>
-                      <Input
-                        value="{Named>/named/age}"
-                        description="Age: {Named>/named/age}"
-                        valueLiveUpdate="true"
-                        width="80%"/>
-                      <Button text="Show Age" press=".onShowNamedFormAge" width="25%" type = "Negative"/>
-
-                  </form:SimpleForm>
-			        </content>
-	          </Panel>
-            <Panel expandable="true" width="auto" class="sapUiResponsiveMargin">
-              <headerToolbar>
-                <OverflowToolbar style="Clear">
-                  <Title text="Un-named Form" />
-                </OverflowToolbar>
-              </headerToolbar>
-		          <content>
-                <Text text="This is a un-named form" />
-                  <form:SimpleForm
-                      editable="true">
-                      <!-- <Title text="Un-named Form"/> -->
-                      <Label text="Name"/>
-                      <Input
-                        value="{/unnamed/name}"
-                        valueLiveUpdate="true"
-                        width="60%"/>
-                      <Button text="Show Name" press=".onShowUnnamedFormName" width="25%" type = "Critical"/>
-                      <Label text="Marks"/>
-                      <Input
-                        value="{/unnamed/marks}"
-                        description="Marks: {/unnamed/marks}"
-                        valueLiveUpdate="true"
-                        width="60%"/>
-                        <Button text="Show Marks" press=".onShowUnnamedFormMarks" width="25%" type = "Neutral"/>
-
-                      <Label text="Age"/>
-                      <Input
-                        value="{/unnamed/age}"
-                        description="Age: {/unnamed/age}"
-                        valueLiveUpdate="true"
-                        width="60%"/>
-                      <Button text="Show Age" press=".onShowUnnamedFormAge" width="25%" type = "Negative"/>
-
-                  </form:SimpleForm>
-			        </content>
-	          </Panel>
+           <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.Panel"/>
+            <Button text="Go to Page 2" press=".onNavigateToPage2" class="sapUiMediumMarginBegin" type="Emphasized"/>
           </content>
-          <Button text="Go to Page 2" press=".onNavigateToPage2" class="sapUiMediumMarginBegin"/>
       </Page>
       </Shell>
         <Page id="page2" title="{i18n>homePageTitle2}" titleAlignment="Center" backgroundDesign="List" class="myPageWithBgImage">
             <content>
               <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.InvoiceList"/>
-              <Button text="Back" press=".onNavigateBack" class="sapUiMediumMarginBegin"/>
-              <Button text="Go to Page 3" press=".onNavigateToPage3" class="sapUiMediumMarginBegin"/>
+              <Button text="Back" press=".onNavigateBack" class="sapUiMediumMarginBegin" type="Negative"/>
+              <Button text="Go to Page 3" press=".onNavigateToPage3" class="sapUiMediumMarginBegin" type="Emphasized"/>
             </content >
       </Page>
       <Page id="page3" title="Invoice Table" titleAlignment="Center" class="myPageWithBgImage1">
         <content>
         <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.InvoiceTable"/>
-        
-        <Button
-            text="Back"
-            press=".onNavigateBack"
-            class="sapUiMediumMarginBegin"/>
+        <Button text="Back" press=".onNavigateBack" class="sapUiMediumMarginBegin" type="Negative"/>
+        <Button text="Go to Page 4" press=".onNavigateToPage4" class="sapUiMediumMarginBegin" type="Emphasized"/>
         </content>
+      </Page>
+      <Page id="page4" title="Profile" titleAlignment="Center">
+          <content>
+              <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.Profile"/>
+              <Button text="Back" press=".onNavigateBack" class="sapUiMediumMarginBegin" type="Negative"/>
+          </content>
       </Page>
       </pages>
     </App>

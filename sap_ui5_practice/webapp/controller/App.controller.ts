@@ -1,4 +1,3 @@
-import MessageToast from "sap/m/MessageToast";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
@@ -60,7 +59,10 @@ export default class AppController extends BaseController {
         const app = this.byId("app") as App;
         app.to(this.createId("page3"));
     }
-
+	public onNavigateToPage4(): void {
+        const app = this.byId("app") as App;
+        app.to(this.createId("page4"));
+    }
     public onNavigateBack(): void {
         const app = this.byId("app") as App;
         app.back();

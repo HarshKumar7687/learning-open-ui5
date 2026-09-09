@@ -1,0 +1,79 @@
+<mvc:View
+  controllerName="ui5.tutorial.walkthrough.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:form="sap.ui.layout.form"
+  displayBlock="true">
+    <Panel expandable="true" width="auto" class="sapUiResponsiveMargin">
+              <headerToolbar>
+                <OverflowToolbar style="Clear">
+                  <Title text="Named Form" />
+                  
+                </OverflowToolbar>
+              </headerToolbar>
+		          <content>
+                  <Text text="This is a named form" />
+                  <form:SimpleForm
+                      editable="true">
+                      <!-- <Title text="Named Form"/> -->
+                      <Label text="Name"/>
+                      <Input
+                        value="{Named>/named/name}" 
+                        width="80%"/>
+                      <Button text="Show Name" press=".onShowNamedFormName" width="25%" type = "Critical"/>
+                      <Label text="Marks"/>
+                      <Input
+                        value="{Named>/named/marks}"
+                        description="Marks: {Named>/named/marks}"
+                        valueLiveUpdate="true"
+                        width="80%"/>                     
+                      <Button text="Show Marks" press=".onShowNamedFormMarks" width="25%" type = "Neutral"/>
+
+                      <Label text="Age"/>
+                      <Input
+                        value="{Named>/named/age}"
+                        description="Age: {Named>/named/age}"
+                        valueLiveUpdate="true"
+                        width="80%"/>
+                      <Button text="Show Age" press=".onShowNamedFormAge" width="25%" type = "Negative"/>
+
+                  </form:SimpleForm>
+			        </content>
+	          </Panel>
+            <Panel expandable="true" width="auto" class="sapUiResponsiveMargin">
+              <headerToolbar>
+                <OverflowToolbar style="Clear">
+                  <Title text="Un-named Form" />
+                </OverflowToolbar>
+              </headerToolbar>
+		          <content>
+                <Text text="This is a un-named form" />
+                  <form:SimpleForm
+                      editable="true">
+                      <!-- <Title text="Un-named Form"/> -->
+                      <Label text="Name"/>
+                      <Input
+                        value="{/unnamed/name}"
+                        valueLiveUpdate="true"
+                        width="60%"/>
+                      <Button text="Show Name" press=".onShowUnnamedFormName" width="25%" type = "Critical"/>
+                      <Label text="Marks"/>
+                      <Input
+                        value="{/unnamed/marks}"
+                        description="Marks: {/unnamed/marks}"
+                        valueLiveUpdate="true"
+                        width="60%"/>
+                        <Button text="Show Marks" press=".onShowUnnamedFormMarks" width="25%" type = "Neutral"/>
+
+                      <Label text="Age"/>
+                      <Input
+                        value="{/unnamed/age}"
+                        description="Age: {/unnamed/age}"
+                        valueLiveUpdate="true"
+                        width="60%"/>
+                      <Button text="Show Age" press=".onShowUnnamedFormAge" width="25%" type = "Negative"/>
+
+                  </form:SimpleForm>
+			        </content>
+	          </Panel>
+</mvc:View>

@@ -1,0 +1,17 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Panel
+    headerText="Spider-man"
+    class="sapUiResponsiveMargin"
+    width="auto" >
+    <content>
+        <Image
+            src="assets/spiderman.jpg"
+            width="100px"
+            height="100px"
+            decorative="true"
+            alt="Sample Image" />
+    </content>
+    </Panel>    
+</mvc:View>
