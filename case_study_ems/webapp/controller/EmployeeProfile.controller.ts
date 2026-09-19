@@ -25,23 +25,11 @@ export default class EmployeeProfile extends BaseController {
     }
 
     private _onRouteMatched(oEvent: any): void {
+        const sEmployeeId = oEvent.getParameter("arguments").employeeId;
+        const oModel = this.getOwnerComponent()!.getModel() as JSONModel;
+        const aEmployees = oModel.getProperty("/Employees") || [];
 
-        const sEmployeeId =
-            oEvent
-                .getParameter("arguments")
-                .employeeId;
-
-        const oModel =
-            this.getOwnerComponent()!.getModel() as JSONModel;
-
-        const aEmployees =
-            oModel.getProperty("/Employees") || [];
-
-        const oEmployee = aEmployees.find(
-            (oEmployee: any) =>
-                String(oEmployee.ID) ===
-                String(sEmployeeId)
-        );
+        const oEmployee = aEmployees.find((oEmployee: any) => String(oEmployee.ID) === String(sEmployeeId));
 
         if (!oEmployee) {
             MessageBox.error("Employee not found");
@@ -66,42 +54,6 @@ export default class EmployeeProfile extends BaseController {
         });
     }
 
-    public onDelete(): void {
-
-        const oComponentModel =
-            this.getOwnerComponent()!.getModel() as JSONModel;
-
-        const oProfileModel =
-            this.getView()!.getModel("profile") as JSONModel;
-
-        const sName =
-            oProfileModel.getProperty("/Name");
-
-        MessageBox.confirm(
-            `Delete employee "${sName}"?`,
-            {
-                title: "Confirm Delete",
-                onClose: (sAction: string): void => {
-                    if ( sAction === MessageBox.Action.OK ) {
-                        const aEmployees = oComponentModel.getProperty("/Employees");
-                        const iIndex = aEmployees.findIndex((oEmployee: any) => String(oEmployee.ID) === String(this._sEmployeeId));
-                        if (iIndex > -1) {
-                            aEmployees.splice(iIndex, 1);
-                            oComponentModel.setProperty(
-                                "/Employees",
-                                aEmployees
-                            );
-                            MessageToast.show(
-                                "Employee deleted"
-                            );
-                            this.getRouter()
-                                .navTo("list");
-                        }
-                    }
-                }
-            }
-        );
-    }
     public onProfilePicturePress(): void {
     const dialog = new Dialog({
         title: "Profile Picture",
