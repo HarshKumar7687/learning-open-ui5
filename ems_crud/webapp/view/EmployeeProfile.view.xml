@@ -19,13 +19,13 @@
                     <HBox
                         class="profileHeaderContent"
                         alignItems="Center">
-
                         <Avatar
                             src="{profile>/PhotoUrl}"
                             initials="{path:'profile>/Name',formatter:'.formatter.getInitials'}"
                             displayShape="Circle"
-                            displaySize="L"
-                            class="profileAvatar"/>
+                            displaySize="XL"
+                            class="profileAvatar"
+                            press="onProfilePicturePress"/>
 
                         <VBox class="profileInfo">
 
@@ -398,14 +398,9 @@
                                 </cells>
                             </ColumnListItem>
                         </items>
-
                     </Table>
-
                 </content>
-
             </Panel>
-
         </content>
     </Page>
-
 </mvc:View>

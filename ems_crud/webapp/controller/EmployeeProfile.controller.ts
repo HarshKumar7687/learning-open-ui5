@@ -3,6 +3,9 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import MessageBox from "sap/m/MessageBox";
 import MessageToast from "sap/m/MessageToast";
 import formatter from "../model/formatter";
+import Dialog from "sap/m/Dialog";
+import Image from "sap/m/Image";
+import Button from "sap/m/Button";
 /**
  * @namespace ems_crud.controller
  */
@@ -78,41 +81,19 @@ export default class EmployeeProfile extends BaseController {
             `Delete employee "${sName}"?`,
             {
                 title: "Confirm Delete",
-
                 onClose: (sAction: string): void => {
-
-                    if (
-                        sAction ===
-                        MessageBox.Action.OK
-                    ) {
-
-                        const aEmployees =
-                            oComponentModel
-                                .getProperty("/Employees");
-
-                        const iIndex =
-                            aEmployees.findIndex(
-                                (oEmployee: any) =>
-                                    String(oEmployee.ID) ===
-                                    String(this._sEmployeeId)
-                            );
-
+                    if ( sAction === MessageBox.Action.OK ) {
+                        const aEmployees = oComponentModel.getProperty("/Employees");
+                        const iIndex = aEmployees.findIndex((oEmployee: any) => String(oEmployee.ID) === String(this._sEmployeeId));
                         if (iIndex > -1) {
-
-                            aEmployees.splice(
-                                iIndex,
-                                1
-                            );
-
+                            aEmployees.splice(iIndex, 1);
                             oComponentModel.setProperty(
                                 "/Employees",
                                 aEmployees
                             );
-
                             MessageToast.show(
                                 "Employee deleted"
                             );
-
                             this.getRouter()
                                 .navTo("list");
                         }
@@ -120,5 +101,26 @@ export default class EmployeeProfile extends BaseController {
                 }
             }
         );
+    }
+    public onProfilePicturePress(): void {
+    const dialog = new Dialog({
+        title: "Profile Picture",
+        contentWidth: "400px",
+        content: [
+            new Image({
+                src: "{profile>/PhotoUrl}",
+                width: "100%",
+                densityAware: false
+            })
+        ],
+        endButton: new Button({
+            text: "Close",
+            press: () => dialog.close()
+        }),
+        afterClose: () => dialog.destroy()
+    });
+
+        this.getView()?.addDependent(dialog);
+        dialog.open();
     }
 }
