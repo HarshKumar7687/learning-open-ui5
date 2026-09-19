@@ -1,0 +1,87 @@
+{
+  "_version": "1.58.0",
+  "sap.app": {
+    "id": "ems_crud",
+    "type": "application",
+    "title": "Employee Management System",
+    "description": "Case study: OpenUI5 Employee Management System with CRUD, search, multi-page navigation, profile page and validations",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "ems_crud.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.108.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.layout": {},
+        "sap.ui.core": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "ems_crud.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "home",
+          "target": "home"
+        },
+        {
+          "pattern": "list",
+          "name": "list",
+          "target": "list"
+        },
+        {
+          "pattern": "profile/{employeeId}",
+          "name": "profile",
+          "target": "profile"
+        }
+      ],
+      "targets": {
+        "home": {
+          "viewName": "Home",
+          "viewId": "home",
+          "viewLevel": 1
+        },
+        "list": {
+          "viewName": "EmployeeList",
+          "viewId": "list",
+          "viewLevel": 2
+        },
+        "profile": {
+          "viewName": "EmployeeProfile",
+          "viewId": "profile",
+          "viewLevel": 3
+        }
+      }
+    }
+  }
+}

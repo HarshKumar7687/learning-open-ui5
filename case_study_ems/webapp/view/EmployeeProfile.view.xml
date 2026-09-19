@@ -1,0 +1,406 @@
+<mvc:View
+    controllerName="ems_crud.controller.EmployeeProfile"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page
+        id="profilePage"
+        title="Employee Profile"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+        class="employeeProfilePage">
+
+        <content>
+
+            <Panel class="profileHeader">
+                <content>
+                    <HBox
+                        class="profileHeaderContent"
+                        alignItems="Center">
+                        <Avatar
+                            src="{profile>/PhotoUrl}"
+                            initials="{path:'profile>/Name',formatter:'.formatter.getInitials'}"
+                            displayShape="Circle"
+                            displaySize="XL"
+                            class="profileAvatar"
+                            press="onProfilePicturePress"/>
+
+                        <VBox class="profileInfo">
+
+                            <HBox
+                                alignItems="Center"
+                                class="profileNameRow">
+
+                                <Title
+                                    text="{profile>/Name}"
+                                    level="H2"
+                                    class="profileName"/>
+
+                                <ObjectStatus
+                                    text="Active"
+                                    state="Success"
+                                    inverted="true"
+                                    class="activeStatus"/>
+
+                            </HBox>
+
+                            <HBox
+                                class="profileMeta"
+                                alignItems="Center"
+                                wrap="Wrap">
+
+                                <ObjectStatus
+                                    icon="sap-icon://group"
+                                    text="{profile>/Department}"/>
+
+                                <ObjectStatus
+                                    icon="sap-icon://functional-location"
+                                    text="{profile>/WorkingLocation}"/>
+
+                                <ObjectStatus
+                                    icon="sap-icon://appointment"
+                                    text="{path:'profile>/JoiningDate',type:'sap.ui.model.type.Date',formatOptions:{source:{pattern:'yyyy-MM-dd'},style:'medium'}}"/>
+
+                            </HBox>
+
+                        </VBox>
+
+                    </HBox>
+                </content>
+            </Panel>
+
+
+            <VBox class="detailsGrid">
+
+                <Panel class="profileCard">
+
+                    <headerToolbar>
+                        <Toolbar class="cardToolbar">
+                            <core:Icon
+                                src="sap-icon://person-placeholder"
+                                class="cardHeaderIcon"/>
+
+                            <Title
+                                text="Personal Details"
+                                level="H4"
+                                class="cardTitle"/>
+                        </Toolbar>
+                    </headerToolbar>
+
+                    <content>
+                        <VBox class="cardContent">
+
+                            <HBox
+                                class="detailRow"
+                                alignItems="Center">
+
+                                <core:Icon
+                                    src="sap-icon://home"
+                                    class="detailIcon"/>
+
+                                <VBox class="detailBlock">
+                                    <Label text="Address"/>
+                                    <Text text="{profile>/Address}"/>
+                                </VBox>
+
+                            </HBox>
+
+                            <HBox
+                                class="detailRow"
+                                alignItems="Center">
+
+                                <core:Icon
+                                    src="sap-icon://money-bills"
+                                    class="detailIcon"/>
+
+                                <VBox class="detailBlock">
+                                    <Label text="Deposit"/>
+                                    <ObjectNumber
+                                        number="{profile>/Deposit}"
+                                        unit="INR"
+                                        emphasized="true"/>
+                                </VBox>
+
+                            </HBox>
+
+                            <HBox
+                                class="detailRow lastRow"
+                                alignItems="Center">
+
+                                <core:Icon
+                                    src="sap-icon://appointment"
+                                    class="detailIcon"/>
+
+                                <VBox class="detailBlock">
+                                    <Label text="Joining Date"/>
+                                    <Text
+                                        text="{path:'profile>/JoiningDate',type:'sap.ui.model.type.Date',formatOptions:{source:{pattern:'yyyy-MM-dd'},style:'medium'}}"/>
+                                </VBox>
+
+                            </HBox>
+
+                        </VBox>
+                    </content>
+
+                </Panel>
+
+
+                <Panel class="profileCard">
+
+                    <headerToolbar>
+                        <Toolbar class="cardToolbar">
+                            <core:Icon
+                                src="sap-icon://business-card"
+                                class="cardHeaderIcon"/>
+
+                            <Title
+                                text="Employment Details"
+                                level="H4"
+                                class="cardTitle"/>
+                        </Toolbar>
+                    </headerToolbar>
+
+                    <content>
+                        <VBox class="cardContent">
+
+                            <HBox
+                                class="detailRow"
+                                alignItems="Center">
+
+                                <core:Icon
+                                    src="sap-icon://group"
+                                    class="detailIcon"/>
+
+                                <VBox class="detailBlock">
+                                    <Label text="Department"/>
+                                    <ObjectStatus
+                                        text="{profile>/Department}"
+                                        state="Information"/>
+                                </VBox>
+
+                            </HBox>
+
+                            <HBox
+                                class="detailRow"
+                                alignItems="Center">
+
+                                <core:Icon
+                                    src="sap-icon://functional-location"
+                                    class="detailIcon"/>
+
+                                <VBox class="detailBlock">
+                                    <Label text="Working Location"/>
+                                    <Text text="{profile>/WorkingLocation}"/>
+                                </VBox>
+
+                            </HBox>
+
+                            <HBox
+                                class="detailRow lastRow"
+                                alignItems="Center">
+
+                                <core:Icon
+                                    src="sap-icon://building"
+                                    class="detailIcon"/>
+
+                                <VBox class="detailBlock">
+                                    <Label text="Previous Organisation"/>
+                                    <Text text="{profile>/PreviousOrganisation}"/>
+                                </VBox>
+
+                            </HBox>
+
+                        </VBox>
+                    </content>
+
+                </Panel>
+
+
+                <Panel class="profileCard">
+
+                    <headerToolbar>
+                        <Toolbar class="cardToolbar">
+                            <core:Icon
+                                src="sap-icon://car-rental"
+                                class="cardHeaderIcon"/>
+
+                            <Title
+                                text="Vehicle Details"
+                                level="H4"
+                                class="cardTitle"/>
+                        </Toolbar>
+                    </headerToolbar>
+
+                    <content>
+                        <VBox class="cardContent">
+
+                            <HBox
+                                class="detailRow"
+                                alignItems="Center">
+
+                                <core:Icon
+                                    src="sap-icon://car-rental"
+                                    class="detailIcon"/>
+
+                                <VBox class="detailBlock">
+                                    <Label text="Vehicle Ownership"/>
+
+                                    <ObjectStatus
+                                        icon="{=${profile>/OwnsVehicle}?'sap-icon://accept':'sap-icon://decline'}"
+                                        text="{=${profile>/OwnsVehicle}?'Owns Vehicle':'No Vehicle'}"
+                                        state="{=${profile>/OwnsVehicle}?'Success':'None'}"
+                                        inverted="true"/>
+                                </VBox>
+
+                            </HBox>
+
+                            <HBox
+                                class="detailRow lastRow"
+                                alignItems="Center">
+
+                                <core:Icon
+                                    src="sap-icon://shipping-status"
+                                    class="detailIcon"/>
+
+                                <VBox class="detailBlock">
+                                    <Label text="Vehicle Type"/>
+
+                                    <Text
+                                        text="{profile>/VehicleType}"
+                                        visible="{profile>/OwnsVehicle}"/>
+
+                                    <Text
+                                        text="Not Applicable"
+                                        visible="{=!${profile>/OwnsVehicle}}"/>
+                                </VBox>
+
+                            </HBox>
+
+                        </VBox>
+                    </content>
+
+                </Panel>
+
+
+                <Panel class="profileCard">
+
+                    <headerToolbar>
+                        <Toolbar class="cardToolbar">
+                            <core:Icon
+                                src="sap-icon://lightbulb"
+                                class="cardHeaderIcon"/>
+
+                            <Title
+                                text="Skills"
+                                level="H4"
+                                class="cardTitle"/>
+                        </Toolbar>
+                    </headerToolbar>
+
+                    <content>
+                        <HBox
+                            items="{profile>/Skills}"
+                            wrap="Wrap"
+                            class="skillsContainer">
+
+                            <items>
+                                <ObjectStatus
+                                    text="{profile>}"
+                                    state="Information"
+                                    class="skillPill"/>
+                            </items>
+
+                        </HBox>
+                    </content>
+
+                </Panel>
+
+            </VBox>
+
+
+            <Panel class="profileCard workExperienceCard">
+
+                <headerToolbar>
+                    <Toolbar class="cardToolbar">
+                        <core:Icon
+                            src="sap-icon://business-objects-experience"
+                            class="cardHeaderIcon"/>
+
+                        <Title
+                            text="Work Experience History"
+                            level="H4"
+                            class="cardTitle"/>
+                    </Toolbar>
+                </headerToolbar>
+
+                <content>
+
+                    <Table
+                        id="workHistoryTable"
+                        items="{profile>/WorkHistory}"
+                        noDataText="No work history recorded"
+                        inset="false"
+                        mode="None"
+                        class="experienceTable">
+
+                        <columns>
+
+                            <Column width="35%">
+                                <header>
+                                    <HBox alignItems="Center">
+                                        <core:Icon
+                                            src="sap-icon://building"
+                                            class="tableHeaderIcon"/>
+                                        <Text text="Company"/>
+                                    </HBox>
+                                </header>
+                            </Column>
+
+                            <Column width="35%">
+                                <header>
+                                    <HBox alignItems="Center">
+                                        <core:Icon
+                                            src="sap-icon://employee"
+                                            class="tableHeaderIcon"/>
+                                        <Text text="Designation"/>
+                                    </HBox>
+                                </header>
+                            </Column>
+
+                            <Column width="30%">
+                                <header>
+                                    <HBox alignItems="Center">
+                                        <core:Icon
+                                            src="sap-icon://history"
+                                            class="tableHeaderIcon"/>
+                                        <Text text="Duration"/>
+                                    </HBox>
+                                </header>
+                            </Column>
+
+                        </columns>
+
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <ObjectIdentifier
+                                        title="{profile>Company}"/>
+
+                                    <Text
+                                        text="{profile>Designation}"/>
+
+                                    <ObjectStatus
+                                        text="{profile>Duration}"
+                                        icon="sap-icon://history"
+                                        state="Information"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </content>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

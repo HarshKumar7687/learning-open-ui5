@@ -1,0 +1,385 @@
+<mvc:View
+    controllerName="ems_crud.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page
+        id="homePage"
+        class="homePage">
+
+        <content>
+            <VBox class="homeContent">
+
+                <!-- Hero -->
+                <VBox class="heroSection">
+                    <HBox
+                        justifyContent="SpaceBetween"
+                        alignItems="Center"
+                        class="heroMain">
+
+                        <VBox class="heroText">
+                            <Text
+                                text="EMPLOYEE DIRECTORY"
+                                class="heroEyebrow"/>
+
+                            <Title
+                                text="Your workforce, organized."
+                                level="H1"
+                                class="heroTitle"/>
+
+                            <Text
+                                text="Explore employee information, organizational structure, working locations and professional profiles from one centralized platform."
+                                class="heroDescription"/>
+
+                            <Button
+                                text="Explore Employees"
+                                icon="sap-icon://employee"
+                                type="Emphasized"
+                                press="onViewEmployees"
+                                class="heroButton"/>
+                        </VBox>
+
+                        <VBox class="heroVisual">
+                            <VBox class="heroIconBox">
+                                <core:Icon
+                                    src="sap-icon://group"
+                                    class="heroIcon"/>
+                            </VBox>
+
+                            <VBox class="heroProfileCard">
+                                <HBox alignItems="Center">
+                                    <VBox class="heroAvatar">
+                                        <core:Icon
+                                            src="sap-icon://employee"
+                                            class="heroAvatarIcon"/>
+                                    </VBox>
+
+                                    <VBox>
+                                        <Text
+                                            text="Employee Profile"
+                                            class="heroProfileTitle"/>
+                                        <Text
+                                            text="People • Departments • Locations"
+                                            class="heroProfileText"/>
+                                    </VBox>
+                                </HBox>
+
+                                <HBox class="heroProfileDetails">
+                                    <Text text="Department"/>
+                                    <Text text="Location"/>
+                                    <Text text="Work History"/>
+                                </HBox>
+                            </VBox>
+                        </VBox>
+
+                    </HBox>
+
+                    <HBox class="heroFeatures">
+
+                        <HBox
+                            class="heroFeature"
+                            alignItems="Center">
+
+                            <core:Icon
+                                src="sap-icon://accept"
+                                class="heroFeatureIcon"/>
+
+                            <Text
+                                text="Reliable Data"
+                                class="heroFeatureText"/>
+                        </HBox>
+
+                        <HBox
+                            class="heroFeature"
+                            alignItems="Center">
+
+                            <core:Icon
+                                src="sap-icon://group"
+                                class="heroFeatureIcon"/>
+
+                            <Text
+                                text="Better Organization"
+                                class="heroFeatureText"/>
+                        </HBox>
+
+                        <HBox
+                            class="heroFeature"
+                            alignItems="Center">
+
+                            <core:Icon
+                                src="sap-icon://bar-chart"
+                                class="heroFeatureIcon"/>
+
+                            <Text
+                                text="Informed Insights"
+                                class="heroFeatureText"/>
+                        </HBox>
+
+                    </HBox>
+                </VBox>
+
+                <!-- Overview -->
+                <HBox
+                    justifyContent="SpaceBetween"
+                    alignItems="Center"
+                    class="sectionHeader">
+
+                    <Title
+                        text="Organization at a Glance"
+                        level="H2"
+                        class="sectionTitle"/>
+
+                    <ObjectStatus
+                        text="Live from your employee directory"
+                        icon="sap-icon://calendar"
+                        state="Information"
+                        class="liveStatus"/>
+                </HBox>
+
+                <HBox
+                    class="statsRow"
+                    wrap="Wrap">
+
+                    <VBox class="statCard statEmployees">
+                        <HBox
+                            justifyContent="SpaceBetween"
+                            alignItems="Start">
+
+                            <VBox>
+                                <Text
+                                    text="TOTAL EMPLOYEES"
+                                    class="statLabel"/>
+
+                                <ObjectNumber
+                                    number="{dashboard>/totalEmployees}"
+                                    class="statNumber"/>
+
+                                <Text
+                                    text="People in directory"
+                                    class="statCaption"/>
+                            </VBox>
+
+                            <VBox class="statIconBox">
+                                <core:Icon
+                                    src="sap-icon://group"
+                                    class="statIcon"/>
+                            </VBox>
+
+                        </HBox>
+
+                        <HBox class="statBottom">
+                            <core:Icon
+                                src="sap-icon://employee"
+                                class="statBottomIcon"/>
+                            <Text
+                                text="Employee records"
+                                class="statBottomText"/>
+                        </HBox>
+                    </VBox>
+
+                    <VBox class="statCard statDepartments">
+                        <HBox
+                            justifyContent="SpaceBetween"
+                            alignItems="Start">
+
+                            <VBox>
+                                <Text
+                                    text="DEPARTMENTS"
+                                    class="statLabel"/>
+
+                                <ObjectNumber
+                                    number="{dashboard>/departments}"
+                                    class="statNumber"/>
+
+                                <Text
+                                    text="Across organization"
+                                    class="statCaption"/>
+                            </VBox>
+
+                            <VBox class="statIconBox">
+                                <core:Icon
+                                    src="sap-icon://group"
+                                    class="statIcon"/>
+                            </VBox>
+
+                        </HBox>
+
+                        <HBox class="statBottom">
+                            <core:Icon
+                                src="sap-icon://org-chart"
+                                class="statBottomIcon"/>
+                            <Text
+                                text="Organizational units"
+                                class="statBottomText"/>
+                        </HBox>
+                    </VBox>
+
+                    <VBox class="statCard statVehicles">
+                        <HBox
+                            justifyContent="SpaceBetween"
+                            alignItems="Start">
+
+                            <VBox>
+                                <Text
+                                    text="VEHICLE OWNERS"
+                                    class="statLabel"/>
+
+                                <ObjectNumber
+                                    number="{dashboard>/vehicleOwners}"
+                                    class="statNumber"/>
+
+                                <Text
+                                    text="Employees with vehicles"
+                                    class="statCaption"/>
+                            </VBox>
+
+                            <VBox class="statIconBox">
+                                <core:Icon
+                                    src="sap-icon://car-rental"
+                                    class="statIcon"/>
+                            </VBox>
+
+                        </HBox>
+
+                        <HBox class="statBottom">
+                            <core:Icon
+                                src="sap-icon://car-rental"
+                                class="statBottomIcon"/>
+                            <Text
+                                text="Vehicle information"
+                                class="statBottomText"/>
+                        </HBox>
+                    </VBox>
+
+                    <VBox class="statCard statLocations">
+                        <HBox
+                            justifyContent="SpaceBetween"
+                            alignItems="Start">
+
+                            <VBox>
+                                <Text
+                                    text="LOCATIONS"
+                                    class="statLabel"/>
+
+                                <ObjectNumber
+                                    number="{dashboard>/locations}"
+                                    class="statNumber"/>
+
+                                <Text
+                                    text="Working locations"
+                                    class="statCaption"/>
+                            </VBox>
+
+                            <VBox class="statIconBox">
+                                <core:Icon
+                                    src="sap-icon://functional-location"
+                                    class="statIcon"/>
+                            </VBox>
+
+                        </HBox>
+
+                        <HBox class="statBottom">
+                            <core:Icon
+                                src="sap-icon://functional-location"
+                                class="statBottomIcon"/>
+                            <Text
+                                text="Work locations"
+                                class="statBottomText"/>
+                        </HBox>
+                    </VBox>
+
+                </HBox>
+
+                <!-- Information Banner -->
+                <HBox
+                    class="infoBanner"
+                    alignItems="Center">
+
+                    <VBox class="infoAccent"/>
+
+                    <VBox class="infoBannerContent">
+                        <Text
+                            text="EMPLOYEE DIRECTORY"
+                            class="infoEyebrow"/>
+
+                        <Title
+                            text="One place. A more connected workforce."
+                            level="H2"
+                            class="infoTitle"/>
+
+                        <Text
+                            text="Quickly find employees, view detailed profiles and understand your organization's structure — all in one place."
+                            class="infoDescription"/>
+                    </VBox>
+
+                    <HBox class="infoHighlights">
+
+                        <VBox class="infoHighlight">
+                            <VBox class="infoHighlightIcon">
+                                <core:Icon
+                                    src="sap-icon://search"
+                                    class="highlightIcon"/>
+                            </VBox>
+
+                            <Title
+                                text="Find People Faster"
+                                level="H4"
+                                class="highlightTitle"/>
+
+                            <Text
+                                text="Search and access employee information quickly."
+                                class="highlightText"/>
+                        </VBox>
+
+                        <VBox class="infoHighlight">
+                            <VBox class="infoHighlightIcon">
+                                <core:Icon
+                                    src="sap-icon://business-card"
+                                    class="highlightIcon"/>
+                            </VBox>
+
+                            <Title
+                                text="Detailed Profiles"
+                                level="H4"
+                                class="highlightTitle"/>
+
+                            <Text
+                                text="View department, location, vehicle and work history."
+                                class="highlightText"/>
+                        </VBox>
+
+                        <VBox class="infoHighlight">
+                            <VBox class="infoHighlightIcon">
+                                <core:Icon
+                                    src="sap-icon://bar-chart"
+                                    class="highlightIcon"/>
+                            </VBox>
+
+                            <Title
+                                text="Better Insights"
+                                level="H4"
+                                class="highlightTitle"/>
+
+                            <Text
+                                text="Understand your workforce structure at a glance."
+                                class="highlightText"/>
+                        </VBox>
+
+                    </HBox>
+
+                    <Button
+                        text="Open Employee Directory"
+                        icon="sap-icon://navigation-right-arrow"
+                        type="Emphasized"
+                        press="onViewEmployees"
+                        class="infoButton"/>
+
+                </HBox>
+
+            </VBox>
+        </content>
+
+    </Page>
+</mvc:View>

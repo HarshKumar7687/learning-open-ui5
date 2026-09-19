@@ -1,0 +1,16 @@
+{
+  "name": "employee-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OpenUI5 case study: Employee Management System with CRUD, search, multi-page navigation, profile page and validations",
+  "scripts": {
+    "start": "ui5 serve --open index.html",
+    "start-noopen": "ui5 serve"
+  },
+  "devDependencies": {
+    "@openui5/types": "^1.120.0",
+    "@ui5/cli": "^3.11.14",
+    "typescript": "5.9",
+    "ui5-tooling-transpile": "^3.13.1"
+  }
+}

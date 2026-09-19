@@ -1,0 +1,221 @@
+{
+  "Departments": ["HR", "IT", "Finance", "Sales", "Operations"],
+  "VehicleTypes": ["Two Wheeler", "Four Wheeler", "None"],
+  "Employees": [
+    {
+      "ID": "EMP001",
+      "Name": "Alok Dubey",
+      "PhotoUrl": "https://i.pinimg.com/1200x/7a/61/8f/7a618f247fe88e16b52463359ba10bf5.jpg",
+      "Address": "Near Motilal Nehru Public School, Jamshedpur",
+      "Deposit": 5000000,
+      "JoiningDate": "2022-06-15",
+      "Department": "IT",
+      "WorkingLocation": "Bengaluru",
+      "OwnsVehicle": true,
+      "VehicleType": "Four Wheeler",
+      "PreviousOrganisation": "Procify",
+      "Skills": ["JavaScript", "OpenUI5", "SAP Fiori"],
+      "WorkHistory": [
+        {
+          "Company": "Procify",
+          "Designation": "Software Engineer",
+          "Duration": "2026-2029"
+        }
+      ]
+    },
+    {
+      "ID": "EMP002",
+      "Name": "Sonali Tiwari",
+      "PhotoUrl": "https://i.pinimg.com/736x/34/7b/9f/347b9fe854235a905cba2e87dfc89ecb.jpg",
+      "Address": "Near Motilal Nehru Public School, Jamshedpur",
+      "Deposit": 3000,
+      "JoiningDate": "2021-03-01",
+      "Department": "Finance",
+      "WorkingLocation": "Kolkata",
+      "OwnsVehicle": false,
+      "VehicleType": "",
+      "PreviousOrganisation": "TCS",
+      "Skills": ["Excel", "SAP FICO"],
+      "WorkHistory": [
+        {
+          "Company": "TCS",
+          "Designation": "Financial Analyst",
+          "Duration": "2017-2021"
+        }
+      ]
+    },
+    {
+      "ID": "EMP003",
+      "Name": "Harsh Kumar",
+      "PhotoUrl": "https://i.pinimg.com/736x/30/6b/73/306b73e1d90b4eac79538a126e6ebd83.jpg",
+      "Address": "Near Vivek Vidyalaya, Jamshedpur",
+      "Deposit": 6500,
+      "JoiningDate": "2030-07-10",
+      "Department": "IT",
+      "WorkingLocation": "Bengaluru",
+      "OwnsVehicle": true,
+      "VehicleType": "Four Wheeler",
+      "PreviousOrganisation": "Procify",
+      "Skills": ["Java", "Node.js", "TypeScript", "React"],
+      "WorkHistory": [
+        {
+          "Company": "Procify",
+          "Designation": "Software Developer",
+          "Duration": "2026-2029"
+        },
+        {
+          "Company": "Microsoft",
+          "Designation": "Software Engineer",
+          "Duration": "2030-2036"
+        }
+      ]
+    },
+    {
+      "ID": "EMP004",
+      "Name": "Kriti Dubey",
+      "PhotoUrl": "https://i.pinimg.com/1200x/94/96/51/9496519f7dc3c0cce3a1be13487ce073.jpg",
+      "Address": "23 Anna Salai, Kerela",
+      "Deposit": 4200,
+      "JoiningDate": "2020-08-20",
+      "Department": "Sales",
+      "WorkingLocation": "Kerela",
+      "OwnsVehicle": true,
+      "VehicleType": "Two Wheeler",
+      "PreviousOrganisation": "HCL",
+      "Skills": ["Negotiation", "CRM", "Communication"],
+      "WorkHistory": [
+        {
+          "Company": "HCL",
+          "Designation": "Sales Executive",
+          "Duration": "2016-2020"
+        }
+      ]
+    },
+    {
+      "ID": "EMP005",
+      "Name": "Amit Dikshit",
+      "PhotoUrl": "https://i.pinimg.com/736x/a5/8b/77/a58b77e6b301f2a5f354d92508f62387.jpg",
+      "Address": "18 Fraser Road, Patna",
+      "Deposit": 3500,
+      "JoiningDate": "2022-11-05",
+      "Department": "Operations",
+      "WorkingLocation": "Patna",
+      "OwnsVehicle": true,
+      "VehicleType": "Four Wheeler",
+      "PreviousOrganisation": "Accenture",
+      "Skills": ["Operations Management", "Excel", "Team Management"],
+      "WorkHistory": [
+        {
+          "Company": "Accenture",
+          "Designation": "Operations Analyst",
+          "Duration": "2018-2022"
+        }
+      ]
+    },
+    {
+      "ID": "EMP006",
+      "Name": "Neha Tiwari",
+      "PhotoUrl": "https://i.pinimg.com/736x/51/03/ee/5103ee4c2f2f3f73804e57e826b2f13a.jpg",
+      "Address": "56 Sector 17, Chandigarh",
+      "Deposit": 5500,
+      "JoiningDate": "2023-02-14",
+      "Department": "HR",
+      "WorkingLocation": "Chandigarh",
+      "OwnsVehicle": false,
+      "VehicleType": "",
+      "PreviousOrganisation": "Deloitte",
+      "Skills": ["Recruitment", "Payroll", "Employee Relations"],
+      "WorkHistory": [
+        {
+          "Company": "Deloitte",
+          "Designation": "HR Executive",
+          "Duration": "2019-2023"
+        }
+      ]
+    },
+    {
+      "ID": "EMP007",
+      "Name": "Vishal Tiwari",
+      "PhotoUrl": "https://i.pinimg.com/736x/36/e6/88/36e68857c6e1b710141d54c3673a2a6c.jpg",
+      "Address": "91 Hinjewadi Road, Pune",
+      "Deposit": 4800,
+      "JoiningDate": "2021-09-12",
+      "Department": "IT",
+      "WorkingLocation": "Pune",
+      "OwnsVehicle": true,
+      "VehicleType": "Four Wheeler",
+      "PreviousOrganisation": "Tech Mahindra",
+      "Skills": ["Java", "Spring Boot", "MySQL"],
+      "WorkHistory": [
+        {
+          "Company": "Tech Mahindra",
+          "Designation": "Backend Developer",
+          "Duration": "2018-2021"
+        }
+      ]
+    },
+    {
+      "ID": "EMP008",
+      "Name": "Sanvi Sharma",
+      "PhotoUrl": "https://i.pinimg.com/1200x/4f/42/45/4f4245622df6a17706c3f3211aba494d.jpg",
+      "Address": "34 Banjara Hills, Hyderabad",
+      "Deposit": 6000,
+      "JoiningDate": "2022-04-18",
+      "Department": "Finance",
+      "WorkingLocation": "Hyderabad",
+      "OwnsVehicle": true,
+      "VehicleType": "Two Wheeler",
+      "PreviousOrganisation": "EY",
+      "Skills": ["Accounting", "Excel", "Financial Analysis"],
+      "WorkHistory": [
+        {
+          "Company": "EY",
+          "Designation": "Finance Associate",
+          "Duration": "2019-2022"
+        }
+      ]
+    },
+    {
+      "ID": "EMP009",
+      "Name": "Rohan Gupta",
+      "PhotoUrl": "https://i.pinimg.com/736x/c5/81/bd/c581bdd5abf632abe32e6c920f2cde60.jpg",
+      "Address": "21 Salt Lake City, Kolkata",
+      "Deposit": 3800,
+      "JoiningDate": "2023-05-22",
+      "Department": "Operations",
+      "WorkingLocation": "Kolkata",
+      "OwnsVehicle": false,
+      "VehicleType": "",
+      "PreviousOrganisation": "Capgemini",
+      "Skills": ["Process Management", "Communication", "Excel"],
+      "WorkHistory": [
+        {
+          "Company": "Capgemini",
+          "Designation": "Operations Executive",
+          "Duration": "2020-2023"
+        }
+      ]
+    },
+    {
+      "ID": "EMP010",
+      "Name": "Pooja Singh",
+      "PhotoUrl": "https://i.pinimg.com/736x/05/bd/01/05bd01b5a3787a628805adb272259636.jpg",
+      "Address": "15 Whitefield Road, Bengaluru",
+      "Deposit": 5200,
+      "JoiningDate": "2024-01-08",
+      "Department": "Sales",
+      "WorkingLocation": "Bengaluru",
+      "OwnsVehicle": true,
+      "VehicleType": "Two Wheeler",
+      "PreviousOrganisation": "Cognizant",
+      "Skills": ["Sales", "CRM", "Client Management"],
+      "WorkHistory": [
+        {
+          "Company": "Cognizant",
+          "Designation": "Sales Associate",
+          "Duration": "2021-2024"
+        }
+      ]
+    }
+  ]
+}
