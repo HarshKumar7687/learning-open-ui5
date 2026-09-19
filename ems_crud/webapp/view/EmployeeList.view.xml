@@ -1,0 +1,158 @@
+<mvc:View
+    controllerName="ems_crud.controller.EmployeeList"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+    <Page
+        id="listPage"
+        title="Employees"
+        class="employeeListPage">
+        <content>
+            <Toolbar
+                id="searchToolbar"
+                class="employeeToolbar">
+                <SearchField
+                    id="searchField"
+                    width="30rem"
+                    placeholder="Search by name, department, location or previous organization"
+                    liveChange="onSearch"
+                    search="onSearch"
+                    class="employeeSearch" />
+                <ToolbarSpacer />
+                <Button
+                    id="addButton"
+                    text="Add Employee"
+                    type="Emphasized"
+                    icon="sap-icon://add-employee"
+                    press="onAdd" />
+            </Toolbar>
+            <Table
+                id="employeeTable"
+                items="{/Employees}"
+                noDataText="No employees found"
+                growing="true"
+                growingThreshold="20"
+                class="employeeTable">
+                <columns>
+                    <Column width="4rem">
+                        <Text text="" />
+                    </Column>
+                    <Column>
+                        <header>
+                            <HBox alignItems="Center">
+                                <core:Icon
+                                    src="sap-icon://employee"
+                                    class="tableHeaderIcon" />
+                                <Text text="Name" />
+                            </HBox>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <HBox alignItems="Center">
+                                <core:Icon
+                                    src="sap-icon://group"
+                                    class="tableHeaderIcon" />
+                                <Text text="Department" />
+                            </HBox>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <HBox alignItems="Center">
+                                <core:Icon
+                                    src="sap-icon://functional-location"
+                                    class="tableHeaderIcon" />
+                                <Text text="Working Location" />
+                            </HBox>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <HBox alignItems="Center">
+                                <core:Icon
+                                    src="sap-icon://appointment"
+                                    class="tableHeaderIcon" />
+                                <Text text="Joining Date" />
+                            </HBox>
+                        </header>
+                    </Column>
+                    <Column hAlign="Center">
+                        <header>
+                            <HBox alignItems="Center">
+                                <core:Icon
+                                    src="sap-icon://car-rental"
+                                    class="tableHeaderIcon" />
+                                <Text text="Owns Vehicle" />
+                            </HBox>
+                        </header>
+                    </Column>
+                    <Column hAlign="Center">
+                        <header>
+                            <HBox alignItems="Center">
+                                <core:Icon
+                                    src="sap-icon://action"
+                                    class="tableHeaderIcon" />
+                                <Text text="Actions" />
+                            </HBox>
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Avatar
+                                src="{PhotoUrl}"
+                                initials="{path:'Name', formatter:'.formatter.getInitials'}"
+                                displayShape="Circle"
+                                displaySize="S"
+                                class="employeeAvatar" />
+                            <Text
+                                text="{Name}"
+                                class="employeeName" />
+                            <Text
+                                text="{Department}"
+                                class="employeeCell" />
+                            <Text
+                                text="{WorkingLocation}"
+                                class="employeeCell" />
+                            <Text
+                                text="{
+                                    path: 'JoiningDate',
+                                    type: 'sap.ui.model.type.Date',
+                                    formatOptions: {
+                                        source: { pattern: 'yyyy-MM-dd' },
+                                        style: 'medium'
+                                    }
+                                }"
+                                class="employeeCell" />
+                            <core:Icon
+                                src="{= ${OwnsVehicle} ? 'sap-icon://accept' : 'sap-icon://decline' }"
+                                color="{= ${OwnsVehicle} ? '#107e3e' : '#bb0000' }" />
+                            <HBox
+                                justifyContent="Center"
+                                class="actionButtons">
+                                <Button
+                                    icon="sap-icon://display"
+                                    type="Transparent"
+                                    press="onViewProfile"
+                                    tooltip="View Profile" />
+                                <Button
+                                    icon="sap-icon://edit"
+                                    type="Transparent"
+                                    press="onEditEmployee"
+                                    tooltip="Edit" />
+                                <Button
+                                    icon="sap-icon://delete"
+                                    type="Transparent"
+                                    press="onDeleteEmployee"
+                                    tooltip="Delete" />
+                            </HBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

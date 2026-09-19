@@ -1,0 +1,216 @@
+{
+  "Departments": ["HR", "IT", "Finance", "Sales", "Operations"],
+  "VehicleTypes": ["Two Wheeler", "Four Wheeler", "None"],
+  "Employees": [
+    {
+      "ID": "EMP001",
+      "Name": "Alok",
+      "PhotoUrl": "",
+      "Address": "12 MG Road, Bengaluru",
+      "Deposit": 5000,
+      "JoiningDate": "2022-06-15",
+      "Department": "IT",
+      "WorkingLocation": "Bengaluru",
+      "OwnsVehicle": true,
+      "VehicleType": "Two Wheeler",
+      "PreviousOrganisation": "Infosys",
+      "Skills": ["JavaScript", "OpenUI5", "SAP Fiori"],
+      "WorkHistory": [
+        {
+          "Company": "Infosys",
+          "Designation": "Software Engineer",
+          "Duration": "2019-2022"
+        }
+      ]
+    },
+    {
+      "ID": "EMP002",
+      "Name": "Sonali",
+      "PhotoUrl": "",
+      "Address": "45 Park Street, Kolkata",
+      "Deposit": 3000,
+      "JoiningDate": "2021-03-01",
+      "Department": "Finance",
+      "WorkingLocation": "Kolkata",
+      "OwnsVehicle": false,
+      "VehicleType": "",
+      "PreviousOrganisation": "TCS",
+      "Skills": ["Excel", "SAP FICO"],
+      "WorkHistory": [
+        {
+          "Company": "TCS",
+          "Designation": "Financial Analyst",
+          "Duration": "2017-2021"
+        }
+      ]
+    },
+    {
+      "ID": "EMP003",
+      "Name": "Harsh",
+      "PhotoUrl": "",
+      "Address": "78 Koramangala, Bengaluru",
+      "Deposit": 6500,
+      "JoiningDate": "2023-07-10",
+      "Department": "IT",
+      "WorkingLocation": "Bengaluru",
+      "OwnsVehicle": true,
+      "VehicleType": "Two Wheeler",
+      "PreviousOrganisation": "Wipro",
+      "Skills": ["Java", "Node.js", "TypeScript", "React"],
+      "WorkHistory": [
+        {
+          "Company": "Wipro",
+          "Designation": "Software Developer",
+          "Duration": "2020-2023"
+        }
+      ]
+    },
+    {
+      "ID": "EMP004",
+      "Name": "Kriti",
+      "PhotoUrl": "",
+      "Address": "23 Anna Salai, Chennai",
+      "Deposit": 4200,
+      "JoiningDate": "2020-08-20",
+      "Department": "Sales",
+      "WorkingLocation": "Chennai",
+      "OwnsVehicle": true,
+      "VehicleType": "Two Wheeler",
+      "PreviousOrganisation": "HCL",
+      "Skills": ["Negotiation", "CRM", "Communication"],
+      "WorkHistory": [
+        {
+          "Company": "HCL",
+          "Designation": "Sales Executive",
+          "Duration": "2016-2020"
+        }
+      ]
+    },
+    {
+      "ID": "EMP005",
+      "Name": "Amit",
+      "PhotoUrl": "",
+      "Address": "18 Fraser Road, Patna",
+      "Deposit": 3500,
+      "JoiningDate": "2022-11-05",
+      "Department": "Operations",
+      "WorkingLocation": "Patna",
+      "OwnsVehicle": true,
+      "VehicleType": "Four Wheeler",
+      "PreviousOrganisation": "Accenture",
+      "Skills": ["Operations Management", "Excel", "Team Management"],
+      "WorkHistory": [
+        {
+          "Company": "Accenture",
+          "Designation": "Operations Analyst",
+          "Duration": "2018-2022"
+        }
+      ]
+    },
+    {
+      "ID": "EMP006",
+      "Name": "Neha",
+      "PhotoUrl": "",
+      "Address": "56 Sector 17, Chandigarh",
+      "Deposit": 5500,
+      "JoiningDate": "2023-02-14",
+      "Department": "HR",
+      "WorkingLocation": "Chandigarh",
+      "OwnsVehicle": false,
+      "VehicleType": "",
+      "PreviousOrganisation": "Deloitte",
+      "Skills": ["Recruitment", "Payroll", "Employee Relations"],
+      "WorkHistory": [
+        {
+          "Company": "Deloitte",
+          "Designation": "HR Executive",
+          "Duration": "2019-2023"
+        }
+      ]
+    },
+    {
+      "ID": "EMP007",
+      "Name": "Vishal",
+      "PhotoUrl": "",
+      "Address": "91 Hinjewadi Road, Pune",
+      "Deposit": 4800,
+      "JoiningDate": "2021-09-12",
+      "Department": "IT",
+      "WorkingLocation": "Pune",
+      "OwnsVehicle": true,
+      "VehicleType": "Four Wheeler",
+      "PreviousOrganisation": "Tech Mahindra",
+      "Skills": ["Java", "Spring Boot", "MySQL"],
+      "WorkHistory": [
+        {
+          "Company": "Tech Mahindra",
+          "Designation": "Backend Developer",
+          "Duration": "2018-2021"
+        }
+      ]
+    },
+    {
+      "ID": "EMP008",
+      "Name": "Sanvi",
+      "PhotoUrl": "",
+      "Address": "34 Banjara Hills, Hyderabad",
+      "Deposit": 6000,
+      "JoiningDate": "2022-04-18",
+      "Department": "Finance",
+      "WorkingLocation": "Hyderabad",
+      "OwnsVehicle": true,
+      "VehicleType": "Two Wheeler",
+      "PreviousOrganisation": "EY",
+      "Skills": ["Accounting", "Excel", "Financial Analysis"],
+      "WorkHistory": [
+        {
+          "Company": "EY",
+          "Designation": "Finance Associate",
+          "Duration": "2019-2022"
+        }
+      ]
+    },
+    {
+      "ID": "EMP009",
+      "Name": "Rohan",
+      "PhotoUrl": "",
+      "Address": "21 Salt Lake City, Kolkata",
+      "Deposit": 3800,
+      "JoiningDate": "2023-05-22",
+      "Department": "Operations",
+      "WorkingLocation": "Kolkata",
+      "OwnsVehicle": false,
+      "VehicleType": "",
+      "PreviousOrganisation": "Capgemini",
+      "Skills": ["Process Management", "Communication", "Excel"],
+      "WorkHistory": [
+        {
+          "Company": "Capgemini",
+          "Designation": "Operations Executive",
+          "Duration": "2020-2023"
+        }
+      ]
+    },
+    {
+      "ID": "EMP010",
+      "Name": "Pooja",
+      "PhotoUrl": "",
+      "Address": "15 Whitefield Road, Bengaluru",
+      "Deposit": 5200,
+      "JoiningDate": "2024-01-08",
+      "Department": "Sales",
+      "WorkingLocation": "Bengaluru",
+      "OwnsVehicle": true,
+      "VehicleType": "Two Wheeler",
+      "PreviousOrganisation": "Cognizant",
+      "Skills": ["Sales", "CRM", "Client Management"],
+      "WorkHistory": [
+        {
+          "Company": "Cognizant",
+          "Designation": "Sales Associate",
+          "Duration": "2021-2024"
+        }
+      ]
+    }
+  ]
+}

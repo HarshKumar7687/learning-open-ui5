@@ -1,0 +1,35 @@
+<mvc:View
+    controllerName="ems_crud.controller.EmployeeCreate"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page
+        id="createPage"
+        title="New Employee"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+        class="sapUiResponsivePadding">
+
+        <content>
+            <core:Fragment
+                fragmentName="ems_crud.view.fragment.EmployeeForm"
+                type="XML" />
+        </content>
+
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button
+                    text="Save"
+                    type="Emphasized"
+                    press="onSave" />
+                <Button
+                    text="Cancel"
+                    press="onNavBack" />
+            </Toolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

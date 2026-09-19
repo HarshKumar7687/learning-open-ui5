@@ -1,0 +1,191 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout.form">
+
+    <Wizard id="employeeWizard">
+
+        <WizardStep
+            id="personalStep"
+            title="Personal Details"
+            icon="sap-icon://person-placeholder">
+
+            <l:SimpleForm
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12">
+
+                <core:Title text="Personal Information" />
+
+                <Label text="Profile Picture URL" />
+                <Input
+                    id="photoUrlInput"
+                    value="{draft>/PhotoUrl}"
+                    placeholder="https://... (optional)" />
+
+                <Label text="Name" required="true" />
+                <Input
+                    id="nameInput"
+                    value="{draft>/Name}"
+                    placeholder="Enter employee name" />
+
+                <Label text="Address" required="true" />
+                <TextArea
+                    id="addressInput"
+                    value="{draft>/Address}"
+                    rows="2"
+                    width="100%"
+                    placeholder="Enter address" />
+
+                <Label text="Deposit" required="true" />
+                <Input
+                    id="depositInput"
+                    value="{draft>/Deposit}"
+                    type="Number"
+                    description="INR" />
+
+                <Label text="Joining Date" required="true" />
+                <DatePicker
+                    id="joiningDatePicker"
+                    value="{path:'draft>/JoiningDate',type:'sap.ui.model.type.Date',formatOptions:{source:{pattern:'yyyy-MM-dd'},pattern:'yyyy-MM-dd'}}" />
+
+            </l:SimpleForm>
+
+        </WizardStep>
+
+        <WizardStep
+            id="employmentStep"
+            title="Employment"
+            icon="sap-icon://business-card">
+
+            <l:SimpleForm
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12">
+
+                <core:Title text="Employment Information" />
+
+                <Label text="Department" required="true" />
+                <Select
+                    id="departmentSelect"
+                    selectedKey="{draft>/Department}"
+                    items="{/Departments}">
+                    <core:Item key="{}" text="{}" />
+                </Select>
+
+                <Label text="Working Location" required="true" />
+                <Input
+                    id="locationInput"
+                    value="{draft>/WorkingLocation}" />
+
+                <Label text="Previous Organisation" />
+                <Input
+                    id="prevOrgInput"
+                    value="{draft>/PreviousOrganisation}" />
+
+            </l:SimpleForm>
+
+        </WizardStep>
+
+        <WizardStep
+            id="vehicleStep"
+            title="Vehicle &amp; Skills"
+            icon="sap-icon://car-rental">
+
+            <l:SimpleForm
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12">
+
+                <core:Title text="Vehicle &amp; Skills" />
+
+                <Label text="Owns Vehicle" />
+                <CheckBox
+                    id="ownsVehicleCheckBox"
+                    text="Employee owns a vehicle"
+                    selected="{draft>/OwnsVehicle}"
+                    select="onOwnsVehicleChange" />
+
+                <Label text="Vehicle Type" />
+                <Select
+                    id="vehicleTypeSelect"
+                    selectedKey="{draft>/VehicleType}"
+                    enabled="{draft>/OwnsVehicle}"
+                    items="{/VehicleTypes}">
+                    <core:Item key="{}" text="{}" />
+                </Select>
+
+                <Label text="Skills" required="true" />
+                <Input
+                    id="skillsInput"
+                    value="{draft>/SkillsText}"
+                    placeholder="JavaScript, OpenUI5, SQL" />
+
+            </l:SimpleForm>
+
+        </WizardStep>
+
+        <WizardStep
+            id="experienceStep"
+            title="Work Experience"
+            icon="sap-icon://business-objects-experience">
+
+            <Toolbar>
+                <Title text="Work Experience History" />
+                <ToolbarSpacer />
+                <Button
+                    text="Add Row"
+                    icon="sap-icon://add"
+                    press="onAddWorkHistoryRow" />
+            </Toolbar>
+
+            <Table
+                id="workHistoryTable"
+                items="{draft>/WorkHistory}"
+                noDataText="No work history added">
+
+                <columns>
+                    <Column>
+                        <Text text="Company" />
+                    </Column>
+                    <Column>
+                        <Text text="Designation" />
+                    </Column>
+                    <Column>
+                        <Text text="Duration" />
+                    </Column>
+                    <Column width="4rem">
+                        <Text text="" />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Input value="{draft>Company}" />
+                            <Input value="{draft>Designation}" />
+                            <Input value="{draft>Duration}" />
+                            <Button
+                                icon="sap-icon://delete"
+                                type="Transparent"
+                                press="onDeleteWorkHistoryRow" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+
+        </WizardStep>
+
+    </Wizard>
+
+</core:FragmentDefinition>
