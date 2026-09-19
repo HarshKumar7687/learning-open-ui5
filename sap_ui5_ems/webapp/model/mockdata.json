@@ -1,0 +1,74 @@
+{
+  "Departments": ["HR", "IT", "Finance", "Sales", "Operations"],
+  "VehicleTypes": ["Two Wheeler", "Four Wheeler", "None"],
+  "Employees": [
+    {
+      "ID": "EMP001",
+      "Name": "Ananya Rao",
+      "PhotoUrl": "https://i.redd.it/ekqv9107qp8a1.jpg",
+      "Address": "12 MG Road, Bengaluru",
+      "Deposit": 5000,
+      "JoiningDate": "2022-06-15",
+      "Department": "IT",
+      "WorkingLocation": "Bengaluru",
+      "OwnsVehicle": true,
+      "VehicleType": "Two Wheeler",
+      "PreviousOrganisation": "Infosys",
+      "Skills": ["JavaScript", "OpenUI5", "SAP Fiori"],
+      "WorkHistory": [
+        { "Company": "Infosys", "Designation": "Software Engineer", "Duration": "2019-2022" }
+      ]
+    },
+    {
+      "ID": "EMP002",
+      "Name": "Rahul Mehta",
+      "PhotoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThtAsp0TrCc-kkQMeOJwZZBvdxvqiJbM3NpRAH_7I3bg&s=10",
+      "Address": "45 Park Street, Kolkata",
+      "Deposit": 3000,
+      "JoiningDate": "2021-03-01",
+      "Department": "Finance",
+      "WorkingLocation": "Kolkata",
+      "OwnsVehicle": false,
+      "VehicleType": "",
+      "PreviousOrganisation": "TCS",
+      "Skills": ["Excel", "SAP FICO"],
+      "WorkHistory": [
+        { "Company": "TCS", "Designation": "Analyst", "Duration": "2017-2021" }
+      ]
+    },
+    {
+      "ID": "EMP003",
+      "Name": "Priya Nair",
+      "PhotoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkkRa_wmZraPe-oRvTqP_CbhlOmLj8WeKuxfvjBu-xCTxANuPZt7Fn1mpK&s=10",
+      "Address": "7 Marine Drive, Kochi",
+      "Deposit": 7500,
+      "JoiningDate": "2023-01-10",
+      "Department": "HR",
+      "WorkingLocation": "Kochi",
+      "OwnsVehicle": true,
+      "VehicleType": "Four Wheeler",
+      "PreviousOrganisation": "Wipro",
+      "Skills": ["Recruitment", "Payroll", "Communication"],
+      "WorkHistory": [
+        { "Company": "Wipro", "Designation": "HR Executive", "Duration": "2020-2023" }
+      ]
+    },
+    {
+      "ID": "EMP004",
+      "Name": "Karthik Iyer",
+      "PhotoUrl": "https://miro.medium.com/1*YqfVlyCe06DfcPsR3kpYrw.jpeg",
+      "Address": "23 Anna Salai, Chennai",
+      "Deposit": 4200,
+      "JoiningDate": "2020-08-20",
+      "Department": "Sales",
+      "WorkingLocation": "Chennai",
+      "OwnsVehicle": true,
+      "VehicleType": "Two Wheeler",
+      "PreviousOrganisation": "HCL",
+      "Skills": ["Negotiation", "CRM"],
+      "WorkHistory": [
+        { "Company": "HCL", "Designation": "Sales Executive", "Duration": "2016-2020" }
+      ]
+    }
+  ]
+}

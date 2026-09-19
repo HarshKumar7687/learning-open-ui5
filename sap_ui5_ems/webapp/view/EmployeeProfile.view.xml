@@ -1,0 +1,290 @@
+<mvc:View
+    controllerName="ems.controller.EmployeeProfile"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout.form"
+    displayBlock="true">
+    <Page
+        id="profilePage"
+        title="Employee Profile"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+        class="sapUiResponsivePadding">
+        <content>
+            <!-- ================= PROFILE HEADER ================= -->
+            <Panel
+                class="sapUiMediumMarginBottom"
+                backgroundDesign="Solid">
+                <content>
+                    <VBox
+                        alignItems="Center"
+                        class="sapUiMediumMarginTop sapUiMediumMarginBottom">
+                        <Avatar
+                            src="{profile>/PhotoUrl}"
+                            initials="{
+                                path: 'profile>/Name',
+                                formatter: '.formatter.getInitials'
+                            }"
+                            displayShape="Circle"
+                            displaySize="XL"
+                            class="sapUiSmallMarginBottom" />
+                        <Title
+                            text="{profile>/Name}"
+                            level="H2"
+                            class="sapUiTinyMarginBottom" />
+                        <HBox
+                            justifyContent="Center"
+                            wrap="Wrap"
+                            class="sapUiTinyMarginBottom">
+                            <ObjectStatus
+                                icon="sap-icon://group"
+                                text="{profile>/Department}"
+                                class="sapUiTinyMarginEnd" />
+                            <ObjectStatus
+                                icon="sap-icon://functional-location"
+                                text="{profile>/WorkingLocation}" />
+                        </HBox>
+                        <ObjectStatus
+                            icon="sap-icon://appointment"
+                            text="{
+                                path: 'profile>/JoiningDate',
+                                type: 'sap.ui.model.type.Date',
+                                formatOptions: {
+                                    source: { pattern: 'yyyy-MM-dd' },
+                                    style: 'medium'
+                                }
+                            }"
+                            title="Joined"
+                            state="Information" />
+                    </VBox>
+                </content>
+            </Panel>
+            <!-- ================ PERSONAL DETAILS ================= -->
+            <Panel
+                headerText="Personal Details"
+                expandable="true"
+                class="sapUiSmallMarginBottom">
+                <content>
+                    <l:SimpleForm
+                        layout="ResponsiveGridLayout"
+                        labelSpanXL="3"
+                        labelSpanL="3"
+                        labelSpanM="4"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="1"
+                        emptySpanL="1"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        editable="false">
+                        <Label
+                            text="Address"
+                            icon="sap-icon://home" />
+                        <Text
+                            text="{profile>/Address}"
+                            wrapping="true" />
+                        <Label
+                            text="Deposit"
+                            icon="sap-icon://money-bills" />
+                        <ObjectNumber
+                            number="{profile>/Deposit}"
+                            unit="INR" />
+                        <Label
+                            text="Joining Date"
+                            icon="sap-icon://appointment" />
+                        <Text
+                            text="{
+                                path: 'profile>/JoiningDate',
+                                type: 'sap.ui.model.type.Date',
+                                formatOptions: {
+                                    source: { pattern: 'yyyy-MM-dd' },
+                                    style: 'medium'
+                                }
+                            }" />
+                    </l:SimpleForm>
+                </content>
+            </Panel>
+            <!-- ================ EMPLOYMENT DETAILS ================= -->
+            <Panel
+                headerText="Employment Details"
+                expandable="true"
+                class="sapUiSmallMarginBottom">
+                <content>
+                    <l:SimpleForm
+                        layout="ResponsiveGridLayout"
+                        labelSpanXL="3"
+                        labelSpanL="3"
+                        labelSpanM="4"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="1"
+                        emptySpanL="1"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        editable="false">
+                        <Label
+                            text="Department"
+                            icon="sap-icon://group" />
+                        <ObjectStatus
+                            text="{profile>/Department}"
+                            state="Information" />
+                        <Label
+                            text="Working Location"
+                            icon="sap-icon://functional-location" />
+                        <ObjectStatus
+                            text="{profile>/WorkingLocation}"
+                            state="None" />
+                        <Label
+                            text="Previous Organisation"
+                            icon="sap-icon://building" />
+                        <Text
+                            text="{profile>/PreviousOrganisation}" />
+                    </l:SimpleForm>
+                </content>
+            </Panel>
+            <!-- ================= VEHICLE DETAILS ================= -->
+            <Panel
+                headerText="Vehicle Details"
+                expandable="true"
+                class="sapUiSmallMarginBottom">
+                <content>
+                    <HBox
+                        wrap="Wrap"
+                        justifyContent="Start"
+                        class="sapUiSmallMargin">
+                        <VBox class="sapUiMediumMarginEnd sapUiSmallMarginBottom">
+                            <Label text="Vehicle Ownership" />
+                            <ObjectStatus
+                                icon="{
+                                    = ${profile>/OwnsVehicle}
+                                    ? 'sap-icon://accept'
+                                    : 'sap-icon://decline'
+                                }"
+                                text="{
+                                    = ${profile>/OwnsVehicle}
+                                    ? 'Owns Vehicle'
+                                    : 'No Vehicle'
+                                }"
+                                state="{
+                                    = ${profile>/OwnsVehicle}
+                                    ? 'Success'
+                                    : 'None'
+                                }" />
+                        </VBox>
+                        <VBox class="sapUiSmallMarginBottom">
+                            <Label text="Vehicle Type" />
+                            <ObjectStatus
+                                icon="sap-icon://car-rental"
+                                text="{profile>/VehicleType}"
+                                visible="{profile>/OwnsVehicle}" />
+                            <Text
+                                text="Not Applicable"
+                                visible="{= !${profile>/OwnsVehicle} }" />
+                        </VBox>
+                    </HBox>
+                </content>
+            </Panel>
+            <!-- ================= SKILLS ================= -->
+            <Panel
+                headerText="Skills"
+                expandable="true"
+                class="sapUiSmallMarginBottom">
+                <content>
+                    <HBox wrap="Wrap" class="sapUiSmallMargin">
+                        <ObjectStatus
+                            icon="sap-icon://competitor"
+                            text="{
+                                path: 'profile>/Skills',
+                                formatter: '.formatter.joinList'
+                            }"
+                            state="Information" />
+                    </HBox>
+                </content>
+            </Panel>
+            <!-- ================= WORK EXPERIENCE ================= -->
+            <Panel
+                headerText="Work Experience History"
+                expandable="true"
+                class="sapUiSmallMarginBottom">
+                <content>
+                    <Table
+                        id="workHistoryTable"
+                        items="{profile>/WorkHistory}"
+                        noDataText="No work history recorded"
+                        growing="true"
+                        growingThreshold="5"
+                        inset="false"
+                        mode="None">
+                        <columns>
+                            <Column
+                                demandPopin="true"
+                                minScreenWidth="Tablet">
+                                <header>
+                                    <HBox alignItems="Center">
+                                        <core:Icon
+                                            src="sap-icon://building"
+                                            class="sapUiTinyMarginEnd" />
+                                        <Text text="Company" />
+                                    </HBox>
+                                </header>
+                            </Column>
+                            <Column
+                                demandPopin="true"
+                                minScreenWidth="Tablet">
+                                <header>
+                                    <HBox alignItems="Center">
+                                        <core:Icon
+                                            src="sap-icon://employee"
+                                            class="sapUiTinyMarginEnd" />
+                                        <Text text="Designation" />
+                                    </HBox>
+                                </header>
+                            </Column>
+                            <Column hAlign="Center">
+                                <header>
+                                    <HBox alignItems="Center">
+                                        <core:Icon
+                                            src="sap-icon://history"
+                                            class="sapUiTinyMarginEnd" />
+                                        <Text text="Duration" />
+                                    </HBox>
+                                </header>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <ObjectIdentifier
+                                        title="{profile>Company}"
+                                        icon="sap-icon://building" />
+                                    <Text text="{profile>Designation}" />
+                                    <ObjectStatus
+                                        text="{profile>Duration}"
+                                        icon="sap-icon://history"
+                                        state="Information" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </content>
+            </Panel>
+        </content>
+        <!-- ================= FOOTER ================= -->
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button
+                    text="Edit"
+                    icon="sap-icon://edit"
+                    type="Emphasized"
+                    press="onEdit" />
+                <Button
+                    text="Delete"
+                    icon="sap-icon://delete"
+                    type="Reject"
+                    press="onDelete" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
